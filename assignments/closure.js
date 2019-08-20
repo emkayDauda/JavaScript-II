@@ -26,10 +26,19 @@ const counterMaker = () => {
   //      NOTE: This `counter` function, being nested inside `counterMaker`,
   //      "closes over" the `count` variable. It can "see" it in the parent scope!
   // 3- Return the `counter` function.
+
+  //Declaration of variable 
+  let count = 0;
+
+  // Use of inline function to increment count BEFORE returning it
+  let counter = () => ++count;
+  return counter;
 };
-// Example usage: const myCounter = counterMaker();
-// myCounter(); // 1
-// myCounter(); // 2
+// Test usage: 
+console.log()
+const myCounter = counterMaker();
+console.log(myCounter()); // 1
+console.log(myCounter()); // 2
 
 // ==== Challenge 3: Make `counterMaker` more sophisticated ====
 // It should have a `limit` parameter. Any counters we make with `counterMaker`
