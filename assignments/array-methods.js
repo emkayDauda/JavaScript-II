@@ -79,6 +79,13 @@ console.log(runnersLargeSizeShirt);
 // ==== Challenge 4: Use .reduce() ====
 // The donations need to be tallied up and reported for tax purposes. Add up all the donations and save the total into a ticketPriceTotal variable.
 let ticketPriceTotal = 0;
+
+// Here, I've decided to split up the two operations I'm doing. First, is using a map function to extract all the donations into a donations array and then the reduce function to sum up all the donations into the ticketPriceTotal variable.
+
+var donations =  runners.map((runner) => runner.donation)
+ticketPriceTotal = donations.reduce((total, donation) => total + donation)
+// ticketPriceTotal = runners.map(runner => runner.donation).reduce((total, donation) => total + donation)
+
 console.log(ticketPriceTotal);
 
 // ==== Challenge 5: Be Creative ====
