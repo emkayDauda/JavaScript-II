@@ -93,6 +93,22 @@ console.log(ticketPriceTotal);
 
 // Problem 1
 
+// Get all shirt large, XL, etc shirts
+let runnersAllLargeSizeShirts = [];
+runnersAllLargeSizeShirts = runners.filter((runner) => runner.shirt_size.includes("L"))
+console.log(runnersAllLargeSizeShirts);
 // Problem 2
 
+// Get all emails
+
+let emails = runners.map(runner => runner.email)
+console.log()
+console.log(emails)
+
 // Problem 3
+
+//Power trip, all company names in lower case
+
+let smallCompanies = runners.map(runner => runner.company_name.toLocaleLowerCase())
+console.log()
+console.log(smallCompanies)
