@@ -56,7 +56,12 @@ console.log(`The last item in ${items} is ${last(items, (item) => item)}`)
 
 function sumNums(x, y, cb) {
   // sumNums adds two numbers (x, y) and passes the result to the callback.
+
+  return cb(x + y)
 }
+
+console.log()
+console.log(`Sum here is ${sumNums(5, 6, sum => sum)}`)
 
 function multiplyNums(x, y, cb) {
   // multiplyNums multiplies two numbers and passes the result to the callback.
