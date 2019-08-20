@@ -44,6 +44,9 @@ function getLength(arr, cb) {
   return cb(arr.length);
 }
 
+console.log(getLength(items, a))
+console.log()
+
 function last(arr, cb) {
   // last passes the last item of the array into the callback.
   return cb(arr[arr.length - 1])
@@ -67,8 +70,6 @@ function contains(item, list, cb) {
 function a(aThing){
   return `${aThing} is what I got. I'm the 'a' callback, BTW...`;
 }
-
-console.log(getLength(items, a))
 
 /* STRETCH PROBLEM */
 
