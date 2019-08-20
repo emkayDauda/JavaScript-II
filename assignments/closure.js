@@ -4,6 +4,16 @@
 // that manipulates variables defined in the outer scope.
 // The outer scope can be a parent function, or the top level of the script.
 
+// Here, I've decided to create an array variable and then have my simple closure modify that variable.
+// Have also decided to make the closure return the make the closure return the mutated value and then I log the value of the closure just to make sure stuff works.
+
+let aVariableArray = [1,2,3,4];
+
+var a = function a(){
+   return aNewVariableArray = aVariableArray.map(a => a * 3)
+}
+
+console.log(a())
 
 /* STRETCH PROBLEMS, Do not attempt until you have completed all previous tasks for today's project files */
 
