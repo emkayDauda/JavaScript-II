@@ -41,6 +41,7 @@ const items = ['Pencil', 'Notebook', 'yo-yo', 'Gum'];
 
 function getLength(arr, cb) {
   // getLength passes the length of the array into the callback.
+  return cb(arr.length);
 }
 
 function last(arr, cb) {
@@ -59,6 +60,12 @@ function contains(item, list, cb) {
   // contains checks if an item is present inside of the given array/list.
   // Pass true to the callback if it is, otherwise pass false.
 }
+
+function a(aThing){
+  return `${aThing} is what I got. I'm the 'a' callback, BTW...`;
+}
+
+console.log(getLength(items, a))
 
 /* STRETCH PROBLEM */
 
