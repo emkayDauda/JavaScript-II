@@ -65,7 +65,11 @@ console.log(`Sum here is ${sumNums(5, 6, sum => sum)}`)
 
 function multiplyNums(x, y, cb) {
   // multiplyNums multiplies two numbers and passes the result to the callback.
+  return console.log(`The multiplication of ${x} and ${y} = ${cb(x * y)}`)
 }
+
+console.log()
+multiplyNums(5, 6, answer => answer)
 
 function contains(item, list, cb) {
   // contains checks if an item is present inside of the given array/list.
