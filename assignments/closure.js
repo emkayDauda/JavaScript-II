@@ -4,6 +4,16 @@
 // that manipulates variables defined in the outer scope.
 // The outer scope can be a parent function, or the top level of the script.
 
+// Here, I've decided to create an array variable and then have my simple closure modify that variable.
+// Have also decided to make the closure return the make the closure return the mutated value and then I log the value of the closure just to make sure stuff works.
+
+let aVariableArray = [1,2,3,4];
+
+var a = function a(){
+   return aNewVariableArray = aVariableArray.map(a => a * 3)
+}
+
+console.log(a())
 
 /* STRETCH PROBLEMS, Do not attempt until you have completed all previous tasks for today's project files */
 
@@ -16,14 +26,43 @@ const counterMaker = () => {
   //      NOTE: This `counter` function, being nested inside `counterMaker`,
   //      "closes over" the `count` variable. It can "see" it in the parent scope!
   // 3- Return the `counter` function.
+
+  //Declaration of variable 
+  let count = 0;
+
+  // Use of inline function to increment count BEFORE returning it
+  let counter = () => ++count;
+  return counter;
 };
-// Example usage: const myCounter = counterMaker();
-// myCounter(); // 1
-// myCounter(); // 2
+// Test usage: 
+console.log()
+const myCounter = counterMaker();
+console.log(myCounter()); // 1
+console.log(myCounter()); // 2
 
 // ==== Challenge 3: Make `counterMaker` more sophisticated ====
 // It should have a `limit` parameter. Any counters we make with `counterMaker`
 // will refuse to go over the limit, and start back at 1.
+
+const counterMaker2 = (limit) => {
+  let count = 0;
+
+
+  let counter = () => {
+    if (count < limit) {
+      return ++count
+    }
+    count = 1
+    return count
+  };
+  return counter
+}
+
+console.log()
+const myCounter2 = counterMaker2(1);
+console.log(myCounter2()); // 1
+console.log(myCounter2()); // 1
+
 
 // ==== Challenge 4: Create a counter function with an object that can increment and decrement ====
 const counterFactory = () => {

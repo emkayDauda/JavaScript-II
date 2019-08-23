@@ -58,21 +58,34 @@ const runners = [
 // ==== Challenge 1: Use .forEach() ====
 // The event director needs both the first and last names of each runner for their running bibs. Combine both the first and last names and populate a new array called `fullNames`. This array will contain just strings.
 let fullNames = [];
+
+// Push is used here specifically because it mutates the original array, and there's no need to copy the value of concatenation or otherwise.
+
+runners.forEach((runner) => fullNames.push(`${runner.first_name} ${runner.last_name}`))
 console.log(fullNames);
 
 // ==== Challenge 2: Use .map() ====
 // The event director needs to have all the runners' first names in uppercase because the director BECAME DRUNK WITH POWER. Populate an array called `firstNamesAllCaps`. This array will contain just strings.
 let firstNamesAllCaps = [];
+firstNamesAllCaps = runners.map((runner) => runner.first_name.toUpperCase())
 console.log(firstNamesAllCaps);
 
 // ==== Challenge 3: Use .filter() ====
 // The large shirts won't be available for the event due to an ordering issue. We need a filtered version of the runners array, containing only those runners with large sized shirts so they can choose a different size. This will be an array of objects.
 let runnersLargeSizeShirt = [];
+runnersLargeSizeShirt = runners.filter((runner) => runner.shirt_size === 'L')
 console.log(runnersLargeSizeShirt);
 
 // ==== Challenge 4: Use .reduce() ====
 // The donations need to be tallied up and reported for tax purposes. Add up all the donations and save the total into a ticketPriceTotal variable.
 let ticketPriceTotal = 0;
+
+// Here, I've decided to split up the two operations I'm doing. First, is using a map function to extract all the donations into a donations array and then the reduce function to sum up all the donations into the ticketPriceTotal variable.
+
+var donations =  runners.map((runner) => runner.donation)
+ticketPriceTotal = donations.reduce((total, donation) => total + donation)
+// ticketPriceTotal = runners.map(runner => runner.donation).reduce((total, donation) => total + donation)
+
 console.log(ticketPriceTotal);
 
 // ==== Challenge 5: Be Creative ====
@@ -80,6 +93,22 @@ console.log(ticketPriceTotal);
 
 // Problem 1
 
+// Get all shirt large, XL, etc shirts
+let runnersAllLargeSizeShirts = [];
+runnersAllLargeSizeShirts = runners.filter((runner) => runner.shirt_size.includes("L"))
+console.log(runnersAllLargeSizeShirts);
 // Problem 2
 
+// Get all emails
+
+let emails = runners.map(runner => runner.email)
+console.log()
+console.log(emails)
+
 // Problem 3
+
+//Power trip, all company names in lower case
+
+let smallCompanies = runners.map(runner => runner.company_name.toLocaleLowerCase())
+console.log()
+console.log(smallCompanies)
